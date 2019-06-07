@@ -21,7 +21,7 @@ From: singularityhub/ubuntu:latest
     /usr/local/miniconda3/bin/pip install tensorboardX
     
     # Install PyTorch 
-    /usr/local/miniconda3/bin/ conda install -y pytorch-cpu torchvision-cpu -c pytorch
+    /usr/local/miniconda3/bin/conda install -y pytorch-cpu torchvision-cpu -c pytorch
 
     # Install Seaborn
     /usr/local/miniconda3/bin/conda install -y -c conda-forge matplotlib
