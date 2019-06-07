@@ -36,7 +36,7 @@ From: singularityhub/ubuntu:latest
     /usr/local/miniconda3/bin/pip install -e '.[box2d]'
 
     # Install PyGame
-    apt-get -y install python3-pygame
+    apt-get -y install python-pygame
 
     # Install PLE
     cd /home
