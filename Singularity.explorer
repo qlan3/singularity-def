@@ -6,7 +6,7 @@ From: singularityhub/ubuntu:latest
 
 %post
     apt-get -y update
-    apt-get install -y apt-utils wget bzip2 parallel git libopenmpi-dev libsm6 libxrender-dev build-essential python-setuptools
+    apt-get -y install wget bzip2 parallel git
 
     # Install miniconda
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -28,8 +28,6 @@ From: singularityhub/ubuntu:latest
     /usr/local/miniconda3/bin/conda install -y seaborn
 
     # Install Gym
-    apt install -y python3-dev zlib1g-dev libjpeg-dev cmake swig python-pyglet python3-opengl libboost-all-dev libsdl2-dev \
-    libosmesa6-dev patchelf ffmpeg xvfb
     cd /home
     git clone https://github.com/openai/gym.git
     cd gym
@@ -38,7 +36,7 @@ From: singularityhub/ubuntu:latest
     /usr/local/miniconda3/bin/pip install -e '.[box2d]'
 
     # Install PyGame
-    apt-get install -y python3-pygame
+    apt-get -y install python3-pygame
 
     # Install PLE
     cd /home
@@ -48,6 +46,6 @@ From: singularityhub/ubuntu:latest
 
     # Install Gym PyGame
     cd /home
-    git clone https://github.com/qlan3/gym-pygame
+    git clone https://github.com/qlan3/gym-pygame.git
     cd gym-pygame/
     /usr/local/miniconda3/bin/pip install -e .
