@@ -6,7 +6,7 @@ From: singularityhub/ubuntu:latest
 
 %post
     apt-get -y update
-    apt-get -y install apt-utils wget bzip2 parallel git libopenmpi-dev libsm6 libxrender-dev build-essential python-setuptools
+    apt-get install -y apt-utils wget bzip2 parallel git libopenmpi-dev libsm6 libxrender-dev build-essential python-setuptools
 
     # Install miniconda
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
