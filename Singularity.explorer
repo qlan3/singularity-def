@@ -1,0 +1,53 @@
+Bootstrap: shub
+From: singularityhub/ubuntu:latest
+
+%environment
+    export PATH="/usr/local/miniconda3/bin:$PATH"
+
+%post
+    apt-get -y update
+    apt-get -y install wget bzip2 parallel git libopenmpi-dev libsm6 libxrender-dev build-essential python-setuptools
+
+    # Install miniconda
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    bash Miniconda3-latest-Linux-x86_64.sh -b -p /usr/local/miniconda3
+    rm -rf Miniconda3-latest-Linux-x86_64.sh
+
+    # Install tensorflow
+    # /usr/local/miniconda3/bin/pip install tensorflow
+    /usr/local/miniconda3/bin/conda install -y -c conda-forge tensorflow
+    
+    # Install tensorboardX
+    /usr/local/miniconda3/bin/pip install tensorboardX
+    
+    # Install PyTorch 
+    /usr/local/miniconda3/bin/ conda install -y pytorch-cpu torchvision-cpu -c pytorch
+
+    # Install Seaborn
+    /usr/local/miniconda3/bin/conda install -y -c conda-forge matplotlib
+    /usr/local/miniconda3/bin/conda install -y seaborn
+
+    # Install Gym
+    apt install -y python3-dev zlib1g-dev libjpeg-dev cmake swig python-pyglet python3-opengl libboost-all-dev libsdl2-dev \
+    libosmesa6-dev patchelf ffmpeg xvfb
+    cd /home
+    git clone https://github.com/openai/gym.git
+    cd gym
+    /usr/local/miniconda3/bin/pip install -e .
+    /usr/local/miniconda3/bin/pip install -e '.[atari]'
+    /usr/local/miniconda3/bin/pip install -e '.[box2d]'
+
+    # Install PyGame
+    apt-get install -y python3-pygame
+
+    # Install PLE
+    cd /home
+    git clone https://github.com/ntasfi/PyGame-Learning-Environment.git
+    cd PyGame-Learning-Environment/
+    /usr/local/miniconda3/bin/pip install -e .
+
+    # Install Gym PyGame
+    cd /home
+    git clone https://github.com/qlan3/gym-pygame
+    cd gym-pygame/
+    /usr/local/miniconda3/bin/pip install -e .
