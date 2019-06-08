@@ -23,12 +23,13 @@ From: singularityhub/ubuntu:latest
     # Install PyTorch 
     /usr/local/miniconda3/bin/conda install -y pytorch-cpu torchvision-cpu -c pytorch
 
-    # Install seaborn tqdm pandas cv2
+    # Install seaborn tqdm pandas psutil opencv
     /usr/local/miniconda3/bin/conda install -y -c conda-forge matplotlib
     /usr/local/miniconda3/bin/conda install -y seaborn
     /usr/local/miniconda3/bin/conda install -y tqdm
     /usr/local/miniconda3/bin/conda install -y pandas
-    /usr/local/miniconda3/bin/conda install -y cv2
+    /usr/local/miniconda3/bin/conda install -c anaconda psutil
+    /usr/local/miniconda3/bin/pip install opencv-python
 
     # Install Gym
     cd /home
