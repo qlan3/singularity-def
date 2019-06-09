@@ -30,31 +30,26 @@ From: ubuntu:16.04
     # Install PyTorch 
     /usr/local/miniconda3/bin/conda install -y pytorch-cpu torchvision-cpu -c pytorch
 
-    # Install seaborn tqdm pandas psutil opencv
+    # Install seaborn tqdm pandas psutil opencv-python
     /usr/local/miniconda3/bin/conda install -y -c conda-forge matplotlib
     /usr/local/miniconda3/bin/conda install -y seaborn
     /usr/local/miniconda3/bin/conda install -y tqdm
     /usr/local/miniconda3/bin/conda install -y pandas
-    /usr/local/miniconda3/bin/conda install -c anaconda psutil
+    /usr/local/miniconda3/bin/conda install -y -c anaconda psutil
     /usr/local/miniconda3/bin/pip install opencv-python
 
     # Install Gym
-    cd /home
-    git clone https://github.com/openai/gym.git
-    cd gym
-    /usr/local/miniconda3/bin/pip install -e .
-    /usr/local/miniconda3/bin/pip install -e '.[classic_control]'
-    /usr/local/miniconda3/bin/pip install -e '.[atari]'
-    /usr/local/miniconda3/bin/pip install -e '.[box2d]'
-
-    # Install PyGame
-    apt-get -y install python-pygame
+    /usr/local/miniconda3/bin/pip install 'gym[classic_control, box2d, atari]'
 
     # Install PLE
     cd /home
     git clone https://github.com/ntasfi/PyGame-Learning-Environment.git
     cd PyGame-Learning-Environment/
     /usr/local/miniconda3/bin/pip install -e .
+
+    # Install PyGame
+    apt-get -y install python-pygame
+    /usr/local/miniconda3/bin/pip install pygame
 
     # Install Gym PyGame
     cd /home
