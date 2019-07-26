@@ -41,13 +41,14 @@ From: ubuntu:16.04
     /usr/local/miniconda3/bin/pip install 'gym[classic_control, box2d, atari]'
 
     # Install PLE
-    cd /home
     /usr/local/miniconda3/bin/pip install git+https://github.com/ntasfi/PyGame-Learning-Environment.git
 
     # Install PyGame
     apt-get -y install python-pygame
     /usr/local/miniconda3/bin/pip install pygame
 
-    # Install Gym PyGame
-    cd /home
-    /usr/local/miniconda3/bin/pip install git+https://github.com/qlan3/gym-pygame.git
+    # Install MinAtar
+    /usr/local/miniconda3/bin/pip install git+https://github.com/kenjyoung/MinAtar.git
+
+    # Install Gym Games
+    /usr/local/miniconda3/bin/pip install git+https://github.com/qlan3/gym-games.git
