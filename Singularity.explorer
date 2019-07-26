@@ -51,4 +51,4 @@ From: ubuntu:16.04
     /usr/local/miniconda3/bin/pip install git+https://github.com/kenjyoung/MinAtar.git
 
     # Install Gym Games
-    /usr/local/miniconda3/bin/pip install git+https://github.com/qlan3/gym-games.git
+    /usr/local/miniconda3/bin/pip install -e git+https://github.com/qlan3/gym-games.git#egg=gym-games
