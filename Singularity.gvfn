@@ -30,9 +30,10 @@ From: ubuntu:16.04
     /usr/local/miniconda3/bin/pip install spacy
     /usr/local/miniconda3/bin/python -m spacy download en
 
-    # Install seaborn tqdm pandas psutil opencv-python
+    # Install seaborn pyarrow tqdm pandas psutil opencv-python
     /usr/local/miniconda3/bin/conda install -y -c conda-forge matplotlib
     /usr/local/miniconda3/bin/conda install -y seaborn
+    /usr/local/miniconda3/bin/pip install pyarrow
     /usr/local/miniconda3/bin/conda install -y tqdm
     /usr/local/miniconda3/bin/conda install -y pandas
     /usr/local/miniconda3/bin/conda install -y -c anaconda psutil
